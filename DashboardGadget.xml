@@ -28,19 +28,16 @@ description="JIRA Server Dashboard Description">
 <script>
 function refresh() {
 jQuery.ajax({
- url: "https://coinmarketcap-nexuist.rhcloud.com/api/eth",
- type: "GET",
- 
- contentType: 'application/json; charset=utf-8',
- success: function(json) {
- document.getElementById("eth").innerHTML= json.price.eur;
-  
- },
- error : function(jqXHR, textStatus, errorThrown) {
- },
- 
- timeout: 120000,
- });
+ type: "POST",
+ dataType: "json",
+                   "contentType": "application/json",
+                   url: "http://localhost:8080/jira/rest/scriptrunner/latest/custom/gadgetEndpoint",
+                   data: data
+                 }).done(function(data) {
+                   alert(data);
+                 }).fail(function() {
+                   alert("Sorry. Server unavailable. ");
+});
 }
  
 refresh();
