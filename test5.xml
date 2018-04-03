@@ -21,6 +21,9 @@
             <Param name="categories">Other</Param>
         </Optional>
     </ModulePrefs>
+    <UserPref name="projectKey" display_name="Project Key" datatype="enum" default_value="TEST" required="true">
+        <EnumValue value="site" display_value="Restrict to your site"/>
+    </UserPref>
 
     <Content type="html">
         <![CDATA[
