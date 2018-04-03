@@ -77,6 +77,19 @@
       </td>
    </tr>
 </table>
+<script type="text/javascript"> var prefs = new gadgets.Prefs();
+function Update() { var channel = document.getElementById('channel').value;
+var url = 'http://www.google.com/uds/modules/elements/videonews/iframe.html?channel=CHANNEL';
+var iframe = document.getElementById('preview_ifr');
+iframe.src = url.replace(/CHANNEL/, channel);
+prefs.set('channel', channel); };
+function Initialize()
+ { var channel = '__UP_channel__'; if (channel.length > 0)
+ { document.getElementById('channel').value = channel; }
+ Update(); gadgets.window.adjustHeight();
+ }
+ gadgets.util.registerOnLoadHandler(Initialize);
+  </script>
 ]]>
     </Content>
 
