@@ -28,13 +28,13 @@
 <script>
 function refresh() {
 jQuery.ajax({
- type: "POST",
+ type: "GET",
  dataType: "json",
                    "contentType": "application/json",
-                   url: "http://localhost:8080/jira/rest/scriptrunner/latest/custom/gadgetEndpoint",
+                   url: "https://avst-prod511.adaptavist.cloud/rest/scriptrunner/latest/custom/gadgetEndpoint",
                    data: "d"
-                 }).done(function(result) {
-                   alert(result);
+                 }).done(function(data) {
+                   alert(data);
                  }).fail(function() {
                    alert("Sorry. Server unavailable. ");
 });

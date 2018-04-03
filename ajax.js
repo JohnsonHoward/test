@@ -3,7 +3,7 @@
             type: "POST",
             dataType: "json",
             "contentType": "application/json",
-            url: "http://localhost:8080/jira/rest/scriptrunner/latest/custom/gadgetEndpoint",
+            url: "https://avst-prod511.adaptavist.cloud/rest/scriptrunner/latest/custom/gadgetEndpoint",
             data: data
           }).done(function(data) {
             alert(data);
@@ -14,10 +14,10 @@
 
 function refresh() {
 jQuery.ajax({
- type: "POST",
+ type: "GET",
  dataType: "json",
                    "contentType": "application/json",
-                   url: "http://localhost:8080/jira/rest/scriptrunner/latest/custom/gadgetEndpoint",
+                   url: "https://avst-prod511.adaptavist.cloud/rest/scriptrunner/latest/custom/gadgetEndpoint",
                    data: data
                  }).done(function(data) {
                    alert(data);
