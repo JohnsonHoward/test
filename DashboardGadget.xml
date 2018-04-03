@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs
+            title="MrAddon example of JIRA Server Dashboard Gadget"
+            author="Raul Pelaez raulpelaez@mraddon.com www.mraddon.com"
+            thumbnail="https://route_to_.png"
+            screenshot="https://route_to.png"
+            description="JIRA Server Dashboard Description">
+
+        <Require feature="minimessage" />
+        <Require feature="dynamic-height" />
+        <Require feature="auth-refresh"/>
+        <Require feature="oauthpopup" />
+        <Require feature="setprefs" />
+        <Require feature="settitle" />
+        <Require feature="core" />
+        <Require feature="core.io" />
+        <Require feature="views" />
+        <Optional feature="atlassian.util" />
+        <Optional feature="gadget-directory">
+            <Param name="categories">Other</Param>
+        </Optional>
+    </ModulePrefs>
+
+    <Content type="html">
+        <![CDATA[
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script>
+function refresh() {
+jQuery.ajax({
+ url: "https://coinmarketcap-nexuist.rhcloud.com/api/eth",
+ type: "GET",
+
+ contentType: 'application/json; charset=utf-8',
+ success: function(json) {
+ document.getElementById("eth").innerHTML= json.price.eur;
+
+ },
+ error : function(jqXHR, textStatus, errorThrown) {
+ },
+
+ timeout: 120000,
+ });
+}
+
+refresh();
+</script>
+        <table>
+            <tr>
+                <td><b>ETH</b></td>
+                <td><font align="right" color="#7c06b7">
+                    <div id="eth">€</div>
+                </font></td>
+            </tr>
+        </table>
+        ]]>
+    </Content>
+</Module>
