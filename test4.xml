@@ -36,20 +36,13 @@ jQuery.ajax({
                  }).done(function(data) {
                     $("#eth").append(JSON.stringify(data))
                  }).fail(function() {
-                   alert("Sorry. Server unavailable. ");
+                    $("#eth").append("Something Went Wrong")
 });
 }
 
 refresh();
 </script>
-<table>
-<tr>
-<td><b>Test</b></td>
-<td><font align="right" color="#7c06b7">
-<div id="eth">€</div>
-</font></td>
-</tr>
-</table>
+<div id="eth"></div>
 ]]>
     </Content>
 </Module>
