@@ -21,7 +21,8 @@
             <Param name="categories">Other</Param>
         </Optional>
     </ModulePrefs>
-
+    <UserPref name="num" datatype="hidden" default_value="10"/>
+    <UserPref name="isConfigured" datatype="hidden" default_value="false"/>
     <UserPref name="columnNames" datatype="hidden" default_value="--Default--"/>
     <UserPref name="sortColumn" datatype="hidden" default_value=""/>
     <UserPref name="refresh" datatype="hidden" default_value="false"/>

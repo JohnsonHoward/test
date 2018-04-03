@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53a773ff-2764-4bb5-9f63-38d5bc29b585" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/test3.xml" afterPath="$PROJECT_DIR$/test3.xml" />
+      <change beforePath="$PROJECT_DIR$/test3.xml" afterPath="$PROJECT_DIR$/testGad.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test3.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test3.xml">
+      <file leaf-file-name="testGad.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testGad.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="165" column="3" lean-forward="true" selection-start-line="165" selection-start-column="3" selection-end-line="165" selection-end-column="3" />
+            <state relative-caret-position="292">
+              <caret line="27" column="70" lean-forward="false" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -305,10 +305,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test3.xml">
+    <entry file="file://$PROJECT_DIR$/testGad.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="165" column="3" lean-forward="true" selection-start-line="165" selection-start-column="3" selection-end-line="165" selection-end-column="3" />
+        <state relative-caret-position="292">
+          <caret line="27" column="70" lean-forward="false" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
           <folding />
         </state>
       </provider>
