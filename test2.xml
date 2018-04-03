@@ -34,7 +34,7 @@ jQuery.ajax({
                    url: "https://avst-prod511.adaptavist.cloud/rest/scriptrunner/latest/custom/gadgetEndpoint",
                    data: "d"
                  }).done(function(data) {
-                   alert(data);
+                    $("#eth").append(JSON.stringify(data))
                  }).fail(function() {
                    alert("Sorry. Server unavailable. ");
 });
