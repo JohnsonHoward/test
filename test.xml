@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs
+            title="Test"
+            author="JH"
+            thumbnail="https://www.redmineup.com/cms/assets/thumbnail/33796/600/jira_logo.png"
+            screenshot="https://www.redmineup.com/cms/assets/thumbnail/33796/600/jira_logo.png"
+            description="JIRA Server Dashboard Description">
+
+        <Require feature="minimessage" />
+        <Require feature="dynamic-height" />
+        <Require feature="auth-refresh"/>
+        <Require feature="oauthpopup" />
+        <Require feature="setprefs" />
+        <Require feature="settitle" />
+        <Require feature="core" />
+        <Require feature="core.io" />
+        <Require feature="views" />
+        <Optional feature="atlassian.util" />
+        <Optional feature="gadget-directory">
+            <Param name="categories">Other</Param>
+        </Optional>
+    </ModulePrefs>
+
+    <Content type="html">
+        <![CDATA[
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script>
+function refresh() {
+jQuery.ajax({
+ type: "POST",
+ dataType: "json",
+                   "contentType": "application/json",
+                   url: "http://localhost:8080/jira/rest/scriptrunner/latest/custom/gadgetEndpoint",
+                   data: "d"
+                 }).done(function(result) {
+                   alert(result);
+                 }).fail(function() {
+                   alert("Sorry. Server unavailable. ");
+});
+}
+
+refresh();
+</script>
+<table>
+<tr>
+<td><b>Test</b></td>
+<td><font align="right" color="#7c06b7">
+<div id="eth">€</div>
+</font></td>
+</tr>
+</table>
+]]>
+    </Content>
+</Module>
