@@ -1,37 +1,34 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-    <ModulePrefs
-            title="MrAddon example of JIRA Server Dashboard Gadget"
-            author="Raul Pelaez raulpelaez@mraddon.com www.mraddon.com"
-            thumbnail="https://route_to_.png"
-            screenshot="https://route_to.png"
-            description="JIRA Server Dashboard Description">
-
-        <Require feature="minimessage" />
-        <Require feature="dynamic-height" />
-        <Require feature="auth-refresh"/>
-        <Require feature="oauthpopup" />
-        <Require feature="setprefs" />
-        <Require feature="settitle" />
-        <Require feature="core" />
-        <Require feature="core.io" />
-        <Require feature="views" />
-        <Optional feature="atlassian.util" />
-        <Optional feature="gadget-directory">
-            <Param name="categories">Other</Param>
-        </Optional>
-    </ModulePrefs>
-
-    <Content type="html">
-        <![CDATA[
-        <table>
-            <tr>
-                <td><b>ETH</b></td>
-                <td><font align="right" color="#7c06b7">
-                    <div id="eth">€</div>
-                </font></td>
-            </tr>
-        </table>
-        ]]>
-    </Content>
+<ModulePrefs title="YouTube News Element" author="Barnaby James" author_email="bajames+gadgets@gmail.com" title_url="http://www.google.com/webelements/youtube/news/" description="Add the YouTube News element to your site so visitors can see the latest YouTube videos from your favorite news source." thumbnail="http://youtube.com/img/pic_youtubelogo_123x63.gif" screenshot="http://www.google.com/webelements/images/ss-youtube-news.png" height="250" width="300">
+<Require feature="dynamic-height"/>
+<Require feature="setprefs"/>
+</ModulePrefs>
+<UserPref name="channel" display_name="News Providers" datatype="enum" default_value="site" required="true">
+<EnumValue value="site" display_value="Restrict to your site"/>
+<EnumValue value="web" display_value="Share across the web"/>
+<EnumValue value="google_news" display_value="Top News Videos"/>
+<EnumValue value="AlJazeeraEnglish" display_value="Al-Jazeera English"/>
+<EnumValue value="AssociatedPress" display_value="The Associated Press"/>
+<EnumValue value="Bloomberg" display_value="Bloomberg"/>
+<EnumValue value="CBSNewsOnline" display_value="CBS News Online"/>
+<EnumValue value="CSPAN" display_value="C-SPAN"/>
+<EnumValue value="Euronews" display_value="Euronews"/>
+<EnumValue value="Foxnewschannel" display_value="Fox News"/>
+<EnumValue value="France24english" display_value="France24 English"/>
+<EnumValue value="ITNnews" display_value="ITN News"/>
+<EnumValue value="NYPost" display_value="The New York Post"/>
+<EnumValue value="thenewyorktimes" display_value="The New York Times"/>
+<EnumValue value="RussiaToday" display_value="Russia Today"/>
+<EnumValue value="WashingtonPost" display_value="The Washington Post"/>
+</UserPref>
+<Content type="html" view="configuration" preferred_height="350">
+<![CDATA[
+<style type="text/css"> .config-options { margin: 10px; } .label { font-weight: bold; } .gray { color:#666666; } html { font-family:arial,sans-serif; font-size:0.81em; font-size-adjust:none; font-style:normal; font-variant:normal; font-weight:normal; line-height:1.5; } A:link, A:visited, A:active { text-decoration: none } </style> <img alt="Google Web Elements" src="http://www.google.com/webelements/images/web_elements_logo.gif"/> <table class="config-options"> <tr> <td align="left" class="label">News Providers:</td> <td align="left"> <select id="channel" onchange="Update()"> <option selected="selected" value="google_news">Top News Videos</option> <option value="AlJazeeraEnglish">Al-Jazeera English</option> <option value="AssociatedPress">The Associated Press</option> <option value="Bloomberg">Bloomberg</option> <option value="CBSNewsOnline">CBS News Online</option> <option value="CSPAN">C-SPAN</option> <option value="Euronews">Euronews</option> <option value="Foxnewschannel">Fox News</option> <option value="France24english">France24 English</option> <option value="ITNnews">ITN News</option> <option value="NYPost">The New York Post</option> <option value="thenewyorktimes">The New York Times</option> <option value="RussiaToday">Russia Today</option> <option value="WashingtonPost">The Washington Post</option> </select> </td> </tr> <tr> <td align="left" class="label"></td> <td align="left"> <div id="preview" style="margin-top:10px;width:300px;height:250px;"> <iframe id="preview_ifr" frameborder="0" marginwidth="0" marginheight="0" border="0" style="border:0;margin:0;width:100%;height:100%;" scrolling="no" allowtransparency="true"></iframe> </div> </td> </tr> </table> <script type="text/javascript"> var prefs = new gadgets.Prefs(); function Update() { var channel = document.getElementById('channel').value; var url = 'http://www.google.com/uds/modules/elements/videonews/iframe.html?channel=CHANNEL'; var iframe = document.getElementById('preview_ifr'); iframe.src = url.replace(/CHANNEL/, channel); prefs.set('channel', channel); }; function Initialize() { var channel = '__UP_channel__'; if (channel.length > 0) { document.getElementById('channel').value = channel; } Update(); gadgets.window.adjustHeight(); } gadgets.util.registerOnLoadHandler(Initialize); </script>
+]]>
+</Content>
+<Content type="html" view="home">
+<![CDATA[
+<iframe frameborder="0" marginwidth="0" marginheight="0" border="0" style="border:0;margin:0;width:100%;height:100%;" src="http://www.google.com/uds/modules/elements/videonews/iframe.html?channel=__UP_channel__" scrolling="no" allowtransparency="true"></iframe>
+]]>
+</Content>
 </Module>
