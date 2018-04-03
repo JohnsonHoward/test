@@ -169,6 +169,7 @@ jQuery.ajax({
 
 refresh();
 </script>
+<div id="eth">€</div>
 ]]>
     </Content>
 </Module>

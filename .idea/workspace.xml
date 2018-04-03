@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53a773ff-2764-4bb5-9f63-38d5bc29b585" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/test3.xml" afterPath="$PROJECT_DIR$/testGad.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/DashboardGadget.xml" afterPath="$PROJECT_DIR$/DashboardGadget.xml" />
+      <change beforePath="$PROJECT_DIR$/testGad.xml" afterPath="$PROJECT_DIR$/testgad.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,21 +15,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DashboardGadget.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DashboardGadget.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DashboardGadget.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+            <state relative-caret-position="-242">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testGad.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testGad.xml">
+      <file leaf-file-name="testgad.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testgad.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="27" column="70" lean-forward="false" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+            <state relative-caret-position="1198">
+              <caret line="171" column="21" lean-forward="false" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -36,8 +38,8 @@
       <file leaf-file-name="content.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="120" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+            <state relative-caret-position="269">
+              <caret line="103" column="28" lean-forward="true" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -71,7 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DashboardGadget.xml" />
         <option value="$PROJECT_DIR$/ajax.js" />
         <option value="$PROJECT_DIR$/test.xml" />
         <option value="$PROJECT_DIR$/test4.xml" />
@@ -84,6 +85,8 @@
         <option value="$PROJECT_DIR$/content.js" />
         <option value="$PROJECT_DIR$/test2.xml" />
         <option value="$PROJECT_DIR$/test3.xml" />
+        <option value="$PROJECT_DIR$/testgad.xml" />
+        <option value="$PROJECT_DIR$/DashboardGadget.xml" />
       </list>
     </option>
   </component>
@@ -289,26 +292,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testgad.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1198">
+          <caret line="171" column="21" lean-forward="false" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="120" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        <state relative-caret-position="269">
+          <caret line="103" column="28" lean-forward="true" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DashboardGadget.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testGad.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="27" column="70" lean-forward="false" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+        <state relative-caret-position="-242">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
