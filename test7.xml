@@ -80,7 +80,7 @@
 ]]>
     </Content>
 
-    <Content type="html">
+    <Content type="html" view="home">
         <![CDATA[
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script>
