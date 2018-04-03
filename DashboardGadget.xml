@@ -24,27 +24,6 @@
 
     <Content type="html">
         <![CDATA[
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
-        <script>
-function refresh() {
-jQuery.ajax({
- url: "https://coinmarketcap-nexuist.rhcloud.com/api/eth",
- type: "GET",
-
- contentType: 'application/json; charset=utf-8',
- success: function(json) {
- document.getElementById("eth").innerHTML= json.price.eur;
-
- },
- error : function(jqXHR, textStatus, errorThrown) {
- },
-
- timeout: 120000,
- });
-}
-
-refresh();
-</script>
         <table>
             <tr>
                 <td><b>ETH</b></td>
