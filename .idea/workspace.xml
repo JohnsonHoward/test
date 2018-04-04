@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53a773ff-2764-4bb5-9f63-38d5bc29b585" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Others.xml" afterPath="$PROJECT_DIR$/Other2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Other3.xml" />
+      <change beforePath="$PROJECT_DIR$/Other2.xml" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Other2.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Other2.xml">
+      <file leaf-file-name="Other3.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Other3.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+            <state relative-caret-position="561">
+              <caret line="57" column="9" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -101,6 +102,7 @@
         <option value="$PROJECT_DIR$/content.js" />
         <option value="$PROJECT_DIR$/testgad5.xml" />
         <option value="$PROJECT_DIR$/Other.xml" />
+        <option value="$PROJECT_DIR$/Other2.xml" />
       </list>
     </option>
   </component>
@@ -330,10 +332,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Other2.xml">
+    <entry file="file://$PROJECT_DIR$/Other3.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        <state relative-caret-position="561">
+          <caret line="57" column="9" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
           <folding />
         </state>
       </provider>
