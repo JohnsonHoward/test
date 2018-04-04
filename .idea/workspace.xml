@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53a773ff-2764-4bb5-9f63-38d5bc29b585" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Other.xml" afterPath="$PROJECT_DIR$/Others.xml" />
+      <change beforePath="$PROJECT_DIR$/Others.xml" afterPath="$PROJECT_DIR$/Other2.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Others.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Others.xml">
+      <file leaf-file-name="Other2.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Other2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="53" column="3" lean-forward="false" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
+            <state relative-caret-position="870">
+              <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -330,10 +330,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Others.xml">
+    <entry file="file://$PROJECT_DIR$/Other2.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="53" column="3" lean-forward="false" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
+        <state relative-caret-position="870">
+          <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
           <folding />
         </state>
       </provider>
