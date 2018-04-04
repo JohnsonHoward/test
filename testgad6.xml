@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs
+            title="Test"
+            author="JH"
+            thumbnail="https://www.redmineup.com/cms/assets/thumbnail/33796/600/jira_logo.png"
+            screenshot="https://www.redmineup.com/cms/assets/thumbnail/33796/600/jira_logo.png"
+            description="JIRA Server Dashboard Description">
+
+        <Require feature="minimessage" />
+        <Require feature="dynamic-height" />
+        <Require feature="auth-refresh"/>
+        <Require feature="oauthpopup" />
+        <Require feature="setprefs" />
+        <Require feature="settitle" />
+        <Require feature="core" />
+        <Require feature="core.io" />
+        <Require feature="views" />
+        <Optional feature="atlassian.util" />
+        <Optional feature="gadget-directory">
+            <Param name="categories">Other</Param>
+        </Optional>
+    </ModulePrefs>
+    <UserPref name="numToDisplay" datatype="hidden" default_value="10"/>
+    <UserPref name="projectID" display_name="Project (ID)" datatype="string" default_value="10010"/>
+    <UserPref name="isConfigured" datatype="hidden" default_value="false" />
+    <Content type="html">
+        <![CDATA[
+ <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js">
+ var gadget = AJS.Gadget({
+   baseUrl: "https://avst-prod511.adaptavist.cloud",
+  useOauth: "/rest/gadget/1.0/currentUser",
+  config: {
+    descriptor: function() {
+      var gadget = this;
+      return {
+        fields: [    {
+        id: "numToDisplay",
+        userpref: "numToDisplay",
+        class: "numField",
+        label: gadget.getMsg("gadget.common.num.label"),
+        description: gadget.getMsg("gadget.common.num.description"),
+        type: "text",
+        value: gadget.getPref("numToDisplay")
+    }, AJS.gadget.fields.nowConfigured()]
+      };
+    }
+  },view: {
+    enableReload: true,
+    onResizeAdjustHeight: true,
+    template: function (args) {
+        var gadget = this;
+        var filters = args.favFilters.filters;
+
+        if (!filters){
+            gadget.getView().removeClass("loading").html("<p>__MSG_gadget.favourite.filters.no.favourites__</p>");
+        } else {
+            var list = AJS.$("<ul/>").attr("id", "filter-list");
+
+            AJS.$(filters).each(function(){
+                list.append(
+                    AJS.$("<li/>").append(
+                        AJS.$("<div/>").addClass("filter-name").append(
+                            AJS.$("<a/>").attr({
+                                target: "_parent",
+                                title: gadgets.util.escapeString(this.description),
+                                href: "https://avst-prod511.adaptavist.cloud/secure/IssueNavigator.jspa?mode=hide&requestId=" + this.value
+                            }).text(this.label)
+                        )
+                    ).append(
+                        AJS.$("<div/>").addClass("filter-count").text(this.count)
+                    ).click(function () {
+                        if (window.parent){
+                            window.parent.location = "https://avst-prod511.adaptavist.cloud/secure/IssueNavigator.jspa?mode=hide&requestId=" + this.value;
+                        } else {
+                            window.location = "https://avst-prod511.adaptavist.cloud/secure/IssueNavigator.jspa?mode=hide&requestId=" + this.value;
+                        }
+                    })
+                );
+            });
+            gadget.getView().html(list);
+        }
+    },
+    args: [{
+        key: "favFilters",
+        ajaxOptions: function () {
+            return {
+                url: "/rest/gadget/1.0/filters",
+                data:  {
+                    showCounts : this.getPref("showCounts")
+                }
+            };
+        }
+    }]
+}
+});
+    </script>
+]]>
+    </Content>
+</Module>
