@@ -1,0 +1,127 @@
+AJS.Gadget({
+  baseUrl: "https://avst-prod511.adaptavist.cloud",
+  useOauth: "/rest/gadget/1.0/currentUser",
+  config: {
+    descriptor: function(args) {
+      var gadget = this;
+      return {
+        action: "/rest/gadget/1.0/issueTable/jql/validate",
+        theme: function() {
+          if (gadgets.window.getViewportDimensions().width < 450) {
+            return "gdt top-label";
+          } else {
+            return "gdt";
+          }
+        }(),
+        fields: [AJS.gadget.fields.numberToShow(gadget, "num"), columnGadgetFieldType(gadget, "columnNames", args.columnChoices.availableColumns), AJS.gadget.fields.nowConfigured()]
+      };
+    },
+    args: [{
+      key: "columnChoices",
+      ajaxOptions: "/rest/gadget/1.0/availableColumns"
+    }, ]
+  },
+  view: {
+    onResizeAdjustHeight: true,
+    enableReload: true,
+    template: function(args) {
+      var gadget = this;
+      this.getView().empty();
+      this.getView().attr("id", "in-progress");
+      var view = AJS.$("<div/>").attr("id", "jira").appendTo(this.getView());
+      var linkStart = "<a href=\"https://avst-prod511.adaptavist.cloud/issues/?jql=status+%3D+%27In+Progress%27+AND+resolution+is+EMPTY+AND+assignee+in+%28currentUser%28%29%29+ORDER+BY+priority+DESC%2C+created+ASC\" target=\"_parent\" title=\"__MSG_gadget.in.progress.title__\">";
+      var linkEnd = "</a>";
+      if (args.issueTable.displayed != 0) {
+        if (args.issueTable.displayed === args.issueTable.total) {
+          view.append(AJS.$("<div/>").addClass("results-wrap").append(AJS.$("<div/>").html(args.issueTable.table)));
+        } else {
+          view.append(AJS.$("<div/>").addClass("results-wrap").append(AJS.$("<div/>").addClass("paging-table").html(args.issueTable.table)));
+        }
+        $resultCountLink = view.find(".results-count-link");
+        $resultCountLink.replaceWith(AJS.$(linkStart + $resultCountLink.html() + linkEnd));
+        AJS.$("th.sortable").each(function() {
+          this.onclick = null;
+        }).click(function() {
+          gadget.sortBy = AJS.$(this).attr("rel");
+          gadget.showView(true);
+        });
+        AJS.$(".pagination a").click(function(event) {
+          event.preventDefault();
+          gadget.startIndex = AJS.$(this).attr("rel");
+          gadget.showView(true);
+        });
+        if (gadget.isLocal()) {
+          if (typeof contextPath === "undefined") {
+            contextPath = "https://avst-prod511.adaptavist.cloud";
+          }
+          AJS.Dropdown.create({
+            trigger: ".issue-actions-trigger",
+            autoScroll: false,
+            ajaxOptions: {
+              dataType: "json",
+              cache: false,
+              formatSuccess: JIRA.FRAGMENTS.issueActionsFragment
+            }
+          });
+        }
+      } else {
+        gadget.getView().append(AJS.$("<div/>").addClass("empty-results").append(AJS.format("__MSG_gadget.issuetable.common.empty__", linkStart, "</a>")));
+      }("#issuetable tr").hover(function() {
+        jQuery(this).addClass("hover");
+      }, function() {
+        if (!AJS.dropDown.current) {
+          jQuery(this).removeClass("hover");
+        }
+      });
+      gadget.resize();
+    },
+    args: [{
+      key: "issueTable",
+      ajaxOptions: function() {
+        var gadget = this;
+        var columnNames = gadget.getPrefArray("columnNames");
+        var hasDefault = false;
+        var indexOf = -1;
+        for (var i = 0; i < columnNames.length; i++) {
+          if (columnNames[i] === "--Default--") {
+            hasDefault = true;
+            indexOf = i;
+            break;
+          }
+        }
+        if (hasDefault) {
+          columnNames.splice(indexOf, 1);
+        }
+        if (!this.sortBy) {
+          this.sortBy = null;
+        }
+        return {
+          url: "/rest/gadget/1.0/issueTable/jql",
+          data: {
+            jql: "status = 'In Progress' AND resolution is EMPTY AND assignee = currentUser() ORDER BY priority DESC, created ASC",
+            num: this.getPref("num"),
+            addDefault: hasDefault,
+            enableSorting: true,
+            sortBy: function() {
+              if (gadget.sortBy && gadget.sortBy !== "") {
+                return gadget.sortBy;
+              } else {
+                return null;
+              }
+            }(),
+            columnNames: columnNames,
+            paging: true,
+            startIndex: function() {
+              if (gadget.startIndex && gadget.startIndex !== "") {
+                return gadget.startIndex;
+              } else {
+                return "0";
+              }
+            }(),
+            showActions: gadget.isLocal()
+          }
+        };
+      }
+    }]
+  }
+});
