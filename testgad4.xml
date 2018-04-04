@@ -29,8 +29,8 @@
     <UserPref name="fieldNames" display_name="Feldname:Breite (feld1:100;feld2:50)" datatype="string" default_value=""/>
     <Content type="html">
         <![CDATA[
-    #requireResource("com.atlassian.jira.gadgets:common")
-    #includeResources()
+ <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+ <script>
     <script type="text/javascript">
  var gadget = AJS.Gadget({
         baseUrl: "https://avst-prod511.adaptavist.cloud",
@@ -82,6 +82,7 @@ jQuery.ajax({
 
 refresh();
 </script>
+<div id="eth"></div>
 ]]>
     </Content>
 </Module>
