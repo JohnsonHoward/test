@@ -11,7 +11,7 @@
             alert("Sorry. Server unavailable. ");
           });
 
-
+$('form').submit(function(event) {
 function refresh() {
 jQuery.ajax({
  type: "GET",
@@ -25,3 +25,4 @@ jQuery.ajax({
                    alert("Sorry. Server unavailable. ");
 });
 }
+});

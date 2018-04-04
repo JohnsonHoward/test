@@ -26,26 +26,6 @@
     <Content type="html">
         <![CDATA[
  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js">
- var gadget = AJS.Gadget({
-  config: {
-    descriptor: function() {
-      var gadget = this;
-      return {
-        fields: [    {
-        id: "numToDisplay",
-        userpref: "numToDisplay",
-        class: "numField",
-        label: gadget.getMsg("gadget.common.num.label"),
-        description: gadget.getMsg("gadget.common.num.description"),
-        type: "text",
-        value: gadget.getPref("numToDisplay")
-    }, AJS.gadget.fields.nowConfigured()]
-      };
-    }
-  }
-});
-    </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js">
 function refresh() {
 jQuery.ajax({
@@ -64,6 +44,15 @@ jQuery.ajax({
 refresh();
 </script>
 <div id="eth"></div>
+<form id="form" class="aui" action="#" method = "post">
+    <fieldset>
+        <div class="field-group">
+            <label for="project-key">Project Key</label>
+            <input class="text" type="text" id="project-key" value="${project}" name="text-input" title="Text input" required>
+        </div>
+    </fieldset>
+<button id="submit-button" type="submit" class="aui-button aui-button-primary">Generate</button>
+</form>
 ]]>
     </Content>
 </Module>
