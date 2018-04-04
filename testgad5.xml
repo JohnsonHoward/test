@@ -30,8 +30,7 @@
     <Content type="html">
         <![CDATA[
  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
- <script>
-    <script type="text/javascript">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js">
  var gadget = AJS.Gadget({
         baseUrl: "https://avst-prod511.adaptavist.cloud",
         useOauth: "/rest/gadget/1.0/currentUser",
@@ -65,7 +64,7 @@
         }
     });
     </script>
-<script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js">
 function refresh() {
 jQuery.ajax({
  type: "GET",
