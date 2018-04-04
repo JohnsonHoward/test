@@ -24,23 +24,15 @@
     <UserPref name="filterID" display_name="Filter (ID)" datatype="string" default_value=""/>
     <UserPref name="beginFieldName" display_name="Beginn (Feldname)" datatype="string" default_value="Beginn"/>
     <UserPref name="endFieldName" display_name="Ende (Feldname)" datatype="string" default_value="Ende"/>
-    <!--  Bei einer Erweiterung auch an die Java-Klasse Period denken!! -->
-    <UserPref name="period" display_name="Zeitraum" datatype="enum" default_value="4">
-        <EnumValue value="1" display_value="Jährlich"/>
-        <EnumValue value="2" display_value="Halbjährlich"/>
-        <EnumValue value="3" display_value="Vierteljährlich"/>
-        <EnumValue value="4" display_value="Monatlich"/>
-        <EnumValue value="5" display_value="Wöchentlich"/>
-        <EnumValue value="6" display_value="Täglich"/>
-    </UserPref>
     <UserPref name="beginDate" display_name="Beginn-Datum (Beispiel 2013-05-24; -3w; +1m)" datatype="string" default_value="2013-01-01"/>
     <UserPref name="endDate" display_name="Ende-Datum (Beispiel 2013-05-24; -3w; +1m)" datatype="string" default_value="2013-12-31"/>
     <UserPref name="fieldNames" display_name="Feldname:Breite (feld1:100;feld2:50)" datatype="string" default_value=""/>
     <Content type="html">
         <![CDATA[
+    #requireResource("com.atlassian.jira.gadgets:common")
+    #includeResources()
     <script type="text/javascript">
-(function () {
-    var gadget = AJS.Gadget({
+ var gadget = AJS.Gadget({
         baseUrl: "https://avst-prod511.adaptavist.cloud",
         useOauth: "/rest/gadget/1.0/currentUser",
         view: {
@@ -63,7 +55,6 @@
                             filterID : this.getPref("filterID"),
                             beginFieldName : this.getPref("beginFieldName"),
                             endFieldName : this.getPref("endFieldName"),
-                            period : this.getPref("period"),
                             beginDate : this.getPref("beginDate"),
                             endDate : this.getPref("endDate"),
                             fieldNames : this.getPref("fieldNames")
@@ -73,7 +64,6 @@
             }]
         }
     });
-})();
     </script>
 <script>
 function refresh() {
@@ -92,7 +82,6 @@ jQuery.ajax({
 
 refresh();
 </script>
-<div id="eth">€</div>
 ]]>
     </Content>
 </Module>
